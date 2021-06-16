@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Realtime Chat App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }      
+      #m {
+        font: 19px Helvetica, Arial;
+      }
+   
+      form {
+        background: #000;
+        padding: 3px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      input {
+        border: 0;
+        padding: 10px;
+        flex: 1 0 0;
+        margin-right: 0.5%;
+        outline: none;
+      }
+      button {
+        background: rgb(162, 197, 165);        
+        padding: 14px;
+      }
+      #messages {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;        
+      }
+      #messages li {
+        padding: 10px;
+      }
+      #messages li.left {
+        background: #dcf8c6;
+        text-align: left;
+      }
+      #messages li.right {
+        background: white;
+        text-align: right;
+      }
+
+      #status {
+        position: fixed;
+        bottom: 50px;
+        left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <div id="status"></div>
+    <form>
+      <input id="m" type="text" autocomplete="off" autofocus/>
+      <button>Send</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script"></script>
+  </body>
+</html>
